@@ -7,7 +7,7 @@
 const calcSignChanges =  (arr) => {
     //начальное значение счетчика - 0
     let count = 0;
-    for (i=1; i < arr.length; i++) {
+    for (let i=1; i < arr.length; i++) {
         if((arr[i-1] < 0) !== (arr[i] < 0)) count++;
     }
     return count;

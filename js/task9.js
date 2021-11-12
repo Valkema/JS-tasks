@@ -6,7 +6,7 @@
 // и возвращает 1, если все элементы равны
 //если находится пара неравных элементов - функция возвращает 0
 const compareItems = (arr1, arr2) => {
-    for (i = 0; i < arr1.length; i++) {
+    for (let i = 0; i < arr1.length; i++) {
         if(arr1[i] !== arr2[i]) {
             return 0;
         }
@@ -22,7 +22,6 @@ const checkOrder = (arr) => {
     const origArr = [...arr];
     //полученный массив сортируется по возрастанию
     const sortedArr = origArr.sort((prevElem, nextElem) => prevElem - nextElem);
-    console.log(sortedArr)
     //оригинальный и отсортированный массивы сравниваются
     const isOrder = compareItems(arr, sortedArr);
     //если массивы совпадают - выводится сообщение 'Массив упорядочен', 
@@ -31,8 +30,3 @@ const checkOrder = (arr) => {
 
     return isOrder;
 } 
-
-
-const test = [-12, 0, 1, 2, 12.5]
-
-checkOrder(test);
