@@ -6,27 +6,28 @@
 // и возвращает 1, если все элементы равны
 //если находится пара неравных элементов - функция возвращает 0
 const compareItems = (arr1, arr2) => {
-    for (let i = 0; i < arr1.length; i++) {
-        if(arr1[i] !== arr2[i]) {
-            return 0;
-        }
-    }
-    return 1;
+  for (let i = 0; i < arr1.length; i++) {
+      
+    if (arr1[i] !== arr2[i]) return 0;
+  }
+ 
+  return 1;
 }
 
 
 //функция принимает массив чисел и возвращает значение true/false,
 // в зависимости от того, упорядочен массив или нет
 const checkOrder = (arr) => {
-    //создается копия оригинального массива
-    const origArr = [...arr];
-    //полученный массив сортируется по возрастанию
-    const sortedArr = origArr.sort((prevElem, nextElem) => prevElem - nextElem);
-    //оригинальный и отсортированный массивы сравниваются
-    const isOrder = compareItems(arr, sortedArr);
-    //если массивы совпадают - выводится сообщение 'Массив упорядочен', 
-    //если нет - выводится сообщение 'Массив не упорядочен'
-    isOrder ? console.log('Массив упорядочен') : console.log('Массив не упорядочен');
+  //создается копия оригинального массива
+  const origArr = [...arr];
+  //полученный массив сортируется по возрастанию
+  const sortedArr = origArr.sort((prevElem, nextElem) => prevElem - nextElem);
+  //оригинальный и отсортированный массивы сравниваются
+  const isOrder = compareItems(arr, sortedArr);
 
-    return isOrder;
+  //если массивы совпадают - выводится сообщение 'Массив упорядочен', 
+  //если нет - выводится сообщение 'Массив не упорядочен'
+  isOrder ? console.log('Массив упорядочен') : console.log('Массив не упорядочен');
+
+  return isOrder;
 } 

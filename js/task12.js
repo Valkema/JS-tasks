@@ -13,15 +13,16 @@
 const PYRAMID_LVL = 9;
 
 const createPyramid = () => {
-//для чисел от 1 до 9 выполняется цикл
-    for (i=1; i <= PYRAMID_LVL; i++){
-        //создается строка "i"
-        const numStr = i.toString();
-        //созданная строка повторяется i-е количество раз с добавленными "_"-элементами
-        const pyramidStr = '_'+ numStr.repeat(i)+'_';
-        //полученная строка выводится в консоль
-        console.log(pyramidStr);
-    };
+  //для чисел от 1 до 9 выполняется цикл
+  for (i=1; i <= PYRAMID_LVL; i++) {
+    //создается строка "i"
+    const numStr = i.toString();
+    //созданная строка повторяется i-е количество раз с добавленными "_"-элементами
+    const pyramidStr = '_' + numStr.repeat(i) + '_';
+
+    //полученная строка выводится в консоль
+    console.log(pyramidStr);
+  }
 }
 
 //выполняется функция createPyramid

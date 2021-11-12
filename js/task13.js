@@ -2,14 +2,15 @@
 // Дан двухмерный массив с числами, например `[[1, 2, 3], [4, 5], [6]]`. 
 // Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
 
-const testArr = [[1, 2, 3], [4, 5], [6]];
+const TEST_ARR = [[1, 2, 3], [4, 5], [6]];
 
 const calcSum = (arr) => {
-    //массив объединяется с подмассивами в одномерный,
-    //вычисляется сумма его элементов
-    const result = arr.flat().reduce((sum, el) => sum+el);
-    return result;
+  //массив объединяется с подмассивами в одномерный,
+  //вычисляется сумма его элементов
+  const result = arr.flat().reduce((sum, el) => sum + el);
+
+  return result;
 }
 
 //результат для тестового массива testArr
-const summa = calcSum(testArr);
+const summa = calcSum(TEST_ARR);

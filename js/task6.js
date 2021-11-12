@@ -3,8 +3,10 @@
 
 // функция isNumValid проверяет, является ли полученное число целым неотрицательным
 const isNumValid = (num) => {
-    return (Number.isInteger(num) && (num >= 0));
-};
+  const result = Number.isInteger(num) && (num >= 0);
+
+  return result;
+}
 
 // функция возвращает массив, состоящий из цифр заданного числа
 const getNumArray = (num) => num.toString().split('').map(Number);
@@ -14,23 +16,26 @@ const getNumArray = (num) => num.toString().split('').map(Number);
 const getSum = (arr) => arr.reduce((sum, elem) => sum + elem);
 
 const checkLucky = (num) => {
-    const numArray = getNumArray(num);
+  const numArray = getNumArray(num);
+
     //если число цифр не равно 6, выводит сообщение 'Not a ticket number!'
     //если в числе 6 цифр, проверяет "счастливый" билет
-    if(numArray.length === 6) {
-        //массив из цифр числа делится на 2 массива - первую и вторую половины
-        const fisrtPart = numArray.slice(0, 3);
-        const secondPart = numArray.slice(3);
-        //считается сумма цифр в каждой половине "билета"
-        const fisrtPartSum = getSum(fisrtPart);
-        const secondPartSum = getSum(secondPart);
+  if (numArray.length === 6) {
+    //массив из цифр числа делится на 2 массива - первую и вторую половины
+    const fisrtPart = numArray.slice(0, 3);
+    const secondPart = numArray.slice(3);
+    //считается сумма цифр в каждой половине "билета"
+    const fisrtPartSum = getSum(fisrtPart);
+    const secondPartSum = getSum(secondPart);
 
-        //если сумма первых 3х чисел равна сумме вторых 3х чисел - выводится сообщение 'Lucky ticket!'
-        //если равенство не выполняется выводится сообщение 'Not a lucky ticket!(('
-            fisrtPartSum === secondPartSum ? console.log('Lucky ticket!') : console.log('Not a lucky ticket!((');
-    }else{
-        console.log('Not a ticket number!')
-    }
+    //если сумма первых 3х чисел равна сумме вторых 3х чисел - выводится сообщение 'Lucky ticket!'
+    //если равенство не выполняется выводится сообщение 'Not a lucky ticket!(('
+    fisrtPartSum === secondPartSum ? 
+    console.log('Lucky ticket!') : 
+    console.log('Not a lucky ticket!((');
+  } else {
+    console.log('Not a ticket number!');
+  }
 }
 
 // isLuckyTicket итоговая функция
@@ -38,5 +43,6 @@ const checkLucky = (num) => {
 // если нет - выводится в консоль сообщение 'Not a ticket number!'
 const isLuckyTicket = (num) => {
     const validNum = isNumValid (num);
+
     validNum ? checkLucky(num) : console.log('Not a ticket number!');
-};
+}

@@ -5,16 +5,14 @@
 const ONE_DAY = 1000*60*60*24;
 
 const calcDays = (prevDay, lastDay) => {
-
-//(1) вычисляется разница между датами в милисекундах
-//(2) милисекунды переводятся в дни
-//(3) округляется полученное значение
-    const numberOfDays = Math.floor(( // (3)
-        prevDay.getTime() - lastDay.getTime()   // (1)
-        )/ONE_DAY); // (2)
+// вычисляется разница между датами в милисекундах
+// милисекунды переводятся в дни
+// округляется полученное значение
+  const numberOfDays = Math.floor((prevDay.getTime() - lastDay.getTime())/ONE_DAY);
 
 // если число получилось отрицательным, функция возвращает его противоположное значение
 // если число получилось положительным,  функция возвращает найденное значение
-    return ( 
-        (numberOfDays < 0) ? -numberOfDays : numberOfDays
-)};
+  return ( 
+    (numberOfDays < 0) ? -numberOfDays : numberOfDays
+  );
+}

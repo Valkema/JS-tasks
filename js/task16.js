@@ -10,20 +10,21 @@ const calcDigitsSum = (num) => num.toString()
                                   .replace(/[-.]/gi, '')
                                   .split('')
                                   .map(Number)
-                                  .reduce((sum, el) => sum+el);
+                                  .reduce((sum, el) => sum + el);
 
 // функция calcTotalSum вычисляет сумму цифр числа до однозначного значения
 const calcTotalSum = (num) => {
-    //вычисляется сумма всех цифр числа
-    let summa = calcDigitsSum(num);
-    //пока результат будет превышать число 9, 
-    //выполняется вычисление суммы всех цифр в полученном результате
-    while(summa > 9){
-        summa = calcDigitsSum(summa);
-    }
+  //вычисляется сумма всех цифр числа
+  let summa = calcDigitsSum(num);
+  //пока результат будет превышать число 9, 
+  //выполняется вычисление суммы всех цифр в полученном результате
 
-    return summa;
+  while(summa > 9) {
+    summa = calcDigitsSum(summa);
+  }
+
+  return summa;
 }
 
-//вычисляется сумма цифр тестового числа TEST_NUM 
+// вычисляется сумма цифр тестового числа TEST_NUM 
 const testSumma = calcTotalSum(TEST_NUM);
