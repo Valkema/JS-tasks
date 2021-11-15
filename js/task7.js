@@ -1,32 +1,43 @@
 // ### Задача 7
 // Дано число. Вычислить сумму n последних цифр числа m
 
-const m = 1231354;
-const n = 15;
+const m = 23135401;
+const n = 5;
 
-const lastNumbersSum = (number, requiredQty) => {
+
+// функция возвращает сумму n последних цифр числа m
+const calcNumsSum = (number, requiredQty) => {
   //составляется массив из всех цифр числа m
-  const allDigits = number.toString().replace(/[-.]/gi, '').split('').map(Number);
-  //вычисляется количество всех цифр числа m
-  const allDigitsQty = allDigits.length;
+  const allDigits = number.toString()
+                          .replace(/[-.]/gi, '')
+                          .split('')
+                          .map(Number);
+  //составляется массив из n последних чисел
+  const requiredDigits = allDigits.slice(allDigits.length - requiredQty);
+  //вычисляется сумма элементов полученного массива
+  const sumDigits = requiredDigits.reduce((sum, elem) => sum + elem);
 
+  return sumDigits;
+}
+
+const lastNumsSum = (m, n) => {
+  // проверка "белого списка" данных, 
+  //если полученные данные соответствуют условиям - вызывается функция calcNumsSum
+  //если данные некорректные - генерируется и возвращается ошибка 
   try {
-    //если число n не превышает количество цифр чила m, продолжаются вычисления
-    //если условие не выполняется - - генерируется ошибка с сообщением о некорректных данных
-    if(requiredQty <= allDigitsQty) {
-      //составляется массив из n последних чисел
-      const requiredDigits = allDigits.slice(allDigitsQty - requiredQty);
-      //вычисляется сумма элементов полученного массива
-      const sumDigits = requiredDigits.reduce((sum, elem) => sum + elem);
+    if (typeof(m) === 'number' && 
+        typeof(n) === 'number' && 
+        n >= 0 && 
+        m.toString().length >= n) {
 
-      return sumDigits;
+      return calcNumsSum(m, n);
     } else {
       throw new RangeError("Incorrect data");
     }
-  } catch(e) { 
-    
-    return e;
+  } catch (err) {
+
+  return err;
   }
 }
 
-console.log(lastNumbersSum(m, n));
+console.log(lastNumsSum(m, n));
