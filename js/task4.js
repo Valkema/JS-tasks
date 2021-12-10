@@ -8,10 +8,10 @@
 //возвращает отсортированную строку
 const toSortStr = (str) => {
   const sortedStr = str.replace(/[-_!@#$%^&*(),.?":{}|<>\s]+/gi, '')
-                         .toLowerCase()
-                         .split('')
-                         .sort()
-                         .join('');
+                        .toLowerCase()
+                        .split('')
+                        .sort()
+                        .join('');
 
   return sortedStr;
 }
@@ -25,3 +25,5 @@ const checkAnagram = (str1, str2) => {
 
     return (sortStr1 === sortStr2);
 }
+
+export {toSortStr, checkAnagram};
