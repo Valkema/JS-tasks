@@ -14,7 +14,7 @@ const isNumValid = (num) => {
 const calcFactorial = (num) => {
   let result = 1;
 
-  if(!num) {
+  if(num === 0) {
 
     return  result;
   } else {
@@ -26,12 +26,15 @@ const calcFactorial = (num) => {
   }
 }
 
-// numFactorial итоговая функция, 
-// сначала выполняется проверка числа, если данные корректные - вычисляется факториал,
+// showFactorial итоговая функция, 
+// сначала выполняется проверка числа, если данные корректные - выводится в консоль факториал,
 // если нет - выводится в консоль сообщение 'Incorrect data'
-const numFactorial = (num) => {
+const showFactorial = (num) => {
   const validNum = isNumValid(num);
-  const result = (validNum ? calcFactorial(num) : console.log('Incorrect data'));
+  const result = (validNum ? calcFactorial(num) : new Error('Incorrect data').message);
 
-  return result;
+  return console.log(result);
 }
+
+
+export {calcFactorial, showFactorial, isNumValid};
