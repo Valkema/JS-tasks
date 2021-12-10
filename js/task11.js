@@ -16,3 +16,6 @@ const getReverseArr = (arr) => {
 
   return reverseArr;
 }
+
+
+export default getReverseArr;
