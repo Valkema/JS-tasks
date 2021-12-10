@@ -1,0 +1,28 @@
+{
+  "name": "task2",
+  "version": "1.0.0",
+  "description": "js tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valkema/JS-tasks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Valkema/JS-tasks/issues"
+  },
+  "homepage": "https://github.com/Valkema/JS-tasks#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/plugin-proposal-export-default-from": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/register": "^7.16.0",
+    "jest": "^27.4.3"
+  }
+}
