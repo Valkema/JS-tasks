@@ -31,10 +31,11 @@ const calcFactorial = (num) => {
 // если нет - выводится в консоль сообщение 'Incorrect data'
 const showFactorial = (num) => {
   const validNum = isNumValid(num);
-  const result = (validNum ? calcFactorial(num) : new Error('Incorrect data').message);
+  const result = (validNum ? calcFactorial(num) : 'Incorrect data');
 
-  return console.log(result);
+  console.log(result);
 }
+
 
 
 export {calcFactorial, showFactorial, isNumValid};

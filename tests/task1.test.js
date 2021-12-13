@@ -37,23 +37,5 @@ describe('Factorial function', () => {
      expect(calcFactorial(null)).toBe(1);
   });
 
-
-  test('show the factorial of a number', () => {
-
-     expect(showFactorial(2)).toBe(console.log(2));
-
-     expect(showFactorial(5)).toBe(console.log(120));
-
-     expect(showFactorial(0)).toBe(console.log(1));
-
-     expect(showFactorial(-5)).toBe(console.log('Incorrect data'));
-
-     expect(showFactorial(NaN)).toBe(console.log('Incorrect data'));
-
-     expect(showFactorial('11113')).toBe(console.log('Incorrect data'));
-
-     expect(showFactorial(1.5)).toBe(console.log('Incorrect data'));
-  });
-
 });
 
